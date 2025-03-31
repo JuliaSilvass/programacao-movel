@@ -36,20 +36,24 @@ export default function App() {
         <TouchableOpacity style={styles.button} onPress={() => addToTotal("carne")}>
           <Image source={require('./assets/pastel_de_carne.jpg')} style={styles.image}></Image>
           <Text style={styles.text}>Pastel de carne</Text>
+          <Text style={styles.precoText}>R$ {precos["carne"].toFixed(2)}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => addToTotal("queijo")}>
           <Image source={require('./assets/pastel_de_queijo.jpg')} style={styles.image}></Image>
           <Text style={styles.text}>Pastel de queijo</Text>
+          <Text style={styles.precoText}>R$ {precos["queijo"].toFixed(2)}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.container3}>
         <TouchableOpacity style={styles.button} onPress={() => addToTotal("frangoC")}>
           <Image source={require('./assets/pastel_de_frango.jpg')} style={styles.image}></Image>
           <Text style={styles.text}>Pastel de frango com catupiry</Text>
+          <Text style={styles.precoText}>R$ {precos["frangoC"].toFixed(2)}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => addToTotal("calabresa")}>
           <Image source={require('./assets/pastel_de_calabresa.jpg')} style={styles.image}></Image>
           <Text style={styles.text}>Pastel de calabresa</Text>
+          <Text style={styles.precoText}>R$ {precos["calabresa"].toFixed(2)}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.container4}>
@@ -124,6 +128,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',  
     textAlign: 'center', 
     maxWidth: 150,  
+    fontWeight: 'bold',
   },
   totalText: {
     fontSize: 20,
@@ -143,4 +148,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
   },
+  precoText: {
+    fontWeight: "bold",
+    color: "#333",
+    marginTop: 5,
+  }
 });
