@@ -44,12 +44,12 @@ export default function App() {
           }}
         />
         <Drawer.Screen
-          name="Ambientes"
+          name="Meus ambientes"
           component={telaAmbiente}
           options={{
             drawerLabel: "Ambientes",
             headerShown: true,
-            drawerIcon: ({ color }) => <Icon name="home-outline" size={20} color={color} />
+            drawerIcon: ({ color }) => <Icon name="layers-outline" size={20} color={color} />
           }}
         />
         <Drawer.Screen

@@ -4,19 +4,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'stretch',
     justifyContent: 'flex-start',
+    alignItems: 'stretch',
     padding: 20,
   },
-  fab: {
-    position: 'absolute',
-    bottom: 70,
-    right: 20,
-    backgroundColor: '#226473',
-    borderRadius: 30,
-    padding: 15,
-    elevation: 5,
-  },
+  // title:{
+  //   fontSize: 24,
+  //   fontWeight: 'bold',
+  //   color: '#226473',
+  //   marginBottom: 20,
+  // },
   saldoContainer: {
     marginBottom: 30,
     alignItems: 'center',
@@ -62,6 +59,35 @@ const styles = StyleSheet.create({
   progressFill: {
     backgroundColor: '#226473',
   },
+  itemAmbiente: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 15,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    marginBottom: 10,
+    elevation: 2
+  },
+  itemText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#333'
+  },
+  emptyText: {
+    textAlign: 'center',
+    marginTop: 50,
+    fontStyle: 'italic',
+    color: '#777'
+  },
+  fab: {
+    position: 'absolute',
+    bottom: 70,
+    right: 20,
+    backgroundColor: '#226473',
+    borderRadius: 30,
+    padding: 15,
+    elevation: 5,
+  }
 });
 
 export default styles;
