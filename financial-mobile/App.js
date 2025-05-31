@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import telaInicial from './src/screens/inicio';
 import telaDespesas from './src/screens/despesas';
@@ -10,10 +11,20 @@ import telaRelatorios from './src/screens/relatorios';
 import telaMapa from './src/screens/mapas';
 import telaSobre from './src/screens/sobre';
 import telaAmbiente from './src/screens/ambientes';
-import styles from './src/styles';
+import EditarAmbiente from './src/screens/editarAmbiente';
+
 
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
+function AmbienteStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="TelaAmbiente" component={TelaAmbiente} options={{ title: 'Meus Ambientes' }} />
+      <Stack.Screen name="EditarAmbiente" component={EditarAmbiente} options={{ title: 'Editar Ambiente' }} />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   const [colorIcone, setColorIcone] = useState("red");
@@ -45,10 +56,10 @@ export default function App() {
         />
         <Drawer.Screen
           name="Meus ambientes"
-          component={telaAmbiente}
+          component={AmbienteStack}
           options={{
             drawerLabel: "Ambientes",
-            headerShown: true,
+            headerShown: false,
             drawerIcon: ({ color }) => <Icon name="layers-outline" size={20} color={color} />
           }}
         />

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, TouchableOpacity} from "react-native";
 import styles from "../styles";
 import Icon from 'react-native-vector-icons/Ionicons';
+
 
 export default function TelaAmbiente({ navigation }) {
   const [ambientes, setAmbientes] = useState([
@@ -11,26 +12,12 @@ export default function TelaAmbiente({ navigation }) {
     { id: '4', nome: 'Estúdio', icone: 'musical-notes-outline' },
   ]);
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.itemAmbiente}
-      onPress={() => editarAmbiente(item.id, item.nome, item.icone)}
-    >
-      <Icon name={item.icone} size={24} color="#226473" />
-      <Text style={styles.itemText}>{item.nome}</Text>
-
-      <TouchableOpacity onPress={() => excluirAmbiente(item.id)}>
-        <Icon name="trash-outline" size={20} color="#226473" />
-      </TouchableOpacity>
-    </TouchableOpacity>
-  );
-
-  const editarAmbiente = (id, novoNome, novoIcone) => {
-    setAmbientes(ambientes.map(ambiente =>
-      ambiente.id === id
-        ? { ...ambiente, nome: novoNome, icone: novoIcone }
-        : ambiente
-    ));
+  const editarAmbiente = (ambienteEditado) => {
+    setAmbientes(prevAmbientes =>
+      prevAmbientes.map(ambiente =>
+        ambiente.id === ambienteEditado.id ? ambienteEditado : ambiente
+      )
+    );
   };
 
   const excluirAmbiente = (id) => {
@@ -38,13 +25,30 @@ export default function TelaAmbiente({ navigation }) {
   }
 
   const addAmbiente = (nomeAmbiente, iconeAmbiente) => {
-    set([...ambientes, {
-      id: Date.now.toString,
+    setAmbientes([...ambientes, {
+      id: Date.now().toString(),
       nome: nomeAmbiente,
       icone: iconeAmbiente,
     }])
   };
+  
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.itemAmbiente}
+      onPress={() => navigation.navigate('editarAmbiente', { 
+        ambiente: item, 
+        onSalvar: editarAmbiente, 
+        onExcluir: excluirAmbiente 
+      })}
+    >
+      <Icon name={item.icone} size={24} color="#226473" />
+      <Text style={styles.itemText}>{item.nome}</Text>
 
+      {/* <TouchableOpacity onPress={() => excluirAmbiente(item.id)}>
+        <Icon name="trash-outline" size={20} color="#226473" />
+      </TouchableOpacity> */}
+    </TouchableOpacity>
+  );
 
   return (
     <View style={styles.container}>
@@ -55,7 +59,7 @@ export default function TelaAmbiente({ navigation }) {
         ListEmptyComponent={<Text style={styles.emptyText}>Nenhum ambiente cadastrado.</Text>}
       />
 
-      <TouchableOpacity style={styles.fab} onPress={addAmbiente}>
+      <TouchableOpacity style={styles.fab} onPress={() => addAmbiente('Novo Ambiente', 'home-outline')}>
         <Icon name="add" size={30} color="#fff" />
       </TouchableOpacity>
 
