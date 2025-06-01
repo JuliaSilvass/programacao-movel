@@ -10,7 +10,7 @@ import telaMetas from './src/screens/metas';
 import telaRelatorios from './src/screens/relatorios';
 import telaMapa from './src/screens/mapas';
 import telaSobre from './src/screens/sobre';
-import telaAmbiente from './src/screens/ambientes';
+import TelaAmbiente from './src/screens/ambientes';
 import EditarAmbiente from './src/screens/editarAmbiente';
 
 
@@ -20,7 +20,7 @@ const Stack = createNativeStackNavigator();
 function AmbienteStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TelaAmbiente" component={TelaAmbiente} options={{ title: 'Meus Ambientes' }} />
+      <Stack.Screen name="TelaAmbiente" component={TelaAmbiente} options={{ title: '' }} />
       <Stack.Screen name="EditarAmbiente" component={EditarAmbiente} options={{ title: 'Editar Ambiente' }} />
     </Stack.Navigator>
   );
@@ -59,7 +59,7 @@ export default function App() {
           component={AmbienteStack}
           options={{
             drawerLabel: "Ambientes",
-            headerShown: false,
+            headerShown: true,
             drawerIcon: ({ color }) => <Icon name="layers-outline" size={20} color={color} />
           }}
         />

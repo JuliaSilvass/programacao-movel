@@ -4,7 +4,7 @@ import styles from "../styles";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-export default function TelaAmbiente({ navigation }) {
+export default function telaAmbiente({ navigation }) {
   const [ambientes, setAmbientes] = useState([
     { id: '1', nome: 'Casa', icone: 'home-outline' },
     { id: '2', nome: 'Trabalho', icone: 'briefcase-outline' },
@@ -35,7 +35,7 @@ export default function TelaAmbiente({ navigation }) {
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.itemAmbiente}
-      onPress={() => navigation.navigate('editarAmbiente', { 
+      onPress={() => navigation.navigate('EditarAmbiente', { 
         ambiente: item, 
         onSalvar: editarAmbiente, 
         onExcluir: excluirAmbiente 
