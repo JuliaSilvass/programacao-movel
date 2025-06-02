@@ -5,7 +5,7 @@ import { BarChart } from 'react-native-chart-kit';
 
 const screenWidth = Dimensions.get("window").width;
 
-export default function telaRelatorios({ navigation }) {
+export default function TelaRelatorios({ navigation }) {
   
   const data = {
     labels: ["Casa", "Trabalho", "Lazer"],

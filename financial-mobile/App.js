@@ -4,14 +4,14 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import telaInicial from './src/screens/inicio';
+import TelaInicial from './src/screens/inicio';
 import TelaDespesas from './src/screens/despesas';
 import EditarDespesa from './src/screens/editarDespesa';
 import EditarMeta from './src/screens/editarMeta';
 import TelaMetas from './src/screens/metas';
-import telaRelatorios from './src/screens/relatorios';
-import telaMapa from './src/screens/mapas';
-import telaSobre from './src/screens/sobre';
+import TelaRelatorios from './src/screens/relatorios';
+import TelaMapa from './src/screens/mapas';
+import TelaSobre from './src/screens/sobre';
 import TelaAmbiente from './src/screens/ambientes';
 import EditarAmbiente from './src/screens/editarAmbiente';
 
@@ -68,7 +68,7 @@ export default function App() {
         }}>
         <Drawer.Screen
           name="Inicio"
-          component={telaInicial}
+          component={TelaInicial}
           options={{
             drawerLabel: "Inicio",
             headerShown: true,
@@ -104,7 +104,7 @@ export default function App() {
         />
         <Drawer.Screen
           name="Relatorios"
-          component={telaRelatorios}
+          component={TelaRelatorios}
           options={{
             drawerLabel: "Relatórios",
             headerShown: true,
@@ -113,7 +113,7 @@ export default function App() {
         />
         <Drawer.Screen
           name="Mapa"
-          component={telaMapa}
+          component={TelaMapa}
           options={{
             drawerLabel: "Mapa",
             headerShown: true,
@@ -122,7 +122,7 @@ export default function App() {
         />
         <Drawer.Screen
           name="Sobre"
-          component={telaSobre}
+          component={TelaSobre}
           options={{
             drawerLabel: "Sobre",
             headerShown: true,

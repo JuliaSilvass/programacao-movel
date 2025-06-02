@@ -4,7 +4,7 @@ import MapView, { Marker } from 'react-native-maps';
 import styles from "../styles";
 
 
-export default function telaMapa({ navigation }) {
+export default function TelaMapa({ navigation }) {
     const locais = [
     { id: 1, nome: 'Padaria', latitude: -23.56, longitude: -46.64 },
     { id: 2, nome: 'Supermercado', latitude: -23.55, longitude: -46.63 }
