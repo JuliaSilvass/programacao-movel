@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Picker } from '@react-native-picker/picker';
@@ -69,13 +69,12 @@ export default function EditarDespesa({ route, navigation }) {
 
   return (
     <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      style={styles.containerTeclado}
     >
-      <ScrollView contentContainerStyle={styles.containerEditarDespesa} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={styles.containerEditar} keyboardShouldPersistTaps="handled">
         
         <Text style={styles.label}>Nome da despesa:</Text>
-        <TextInput 
+        <TextInput  
           value={nome}
           onChangeText={setNome}
           style={styles.input}

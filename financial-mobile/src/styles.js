@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     padding: 20,
   },
-  containerEditarDespesa: {
+  containerEditar: {
     padding: 20,
     backgroundColor: '#fff',
   },
@@ -175,6 +175,9 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     padding: 1,
     backgroundColor: '#f2f2f2'
+  },
+  containerTeclado: {
+    flex: 1,
   },
 });
 
