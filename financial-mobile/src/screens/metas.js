@@ -10,22 +10,22 @@ export default function TelaMetas({ navigation }) {
     {
       id: '1', nome: 'Economizar para Viagem', valor: 5000, categoria: 'Viagem',
       dataLimite: '2025-12-31', icone: 'airplane-outline', status: 'ativa',
-      idAmbiente: '1'
+      idAmbiente: 'Casa'
     },
     {
       id: '2', nome: 'Comprar Carro Novo', valor: 30000, categoria: 'Transporte',
       dataLimite: '2026-06-30', icone: 'car-outline', status: 'ativa',
-      idAmbiente: '1'
+      idAmbiente: 'Casa'
     },
     {
       id: '3', nome: 'Estudar para Concurso', valor: 2000, categoria: 'Educação',
       dataLimite: '2025-08-15', icone: 'school-outline', status: 'ativa',
-      idAmbiente: '3'
+      idAmbiente: 'Escritório'
     },
     {
       id: '4', nome: 'Reforma da Casa', valor: 15000, categoria: 'Casa',
       dataLimite: '2025-11-01', icone: 'home-outline', status: 'ativa',
-      idAmbiente: '1'
+      idAmbiente: 'Casa'
     }
   ]);
 
@@ -50,7 +50,7 @@ export default function TelaMetas({ navigation }) {
       dataLimite: dataLimite || new Date().toISOString().split('T')[0],
       icone: iconeMeta || 'star-outline',
       status: status || 'ativa',
-      ambiente: ambiente || 'Casa',
+      idAmbiente: ambiente || 'Casa',
     }]);
   }
 

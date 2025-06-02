@@ -10,31 +10,31 @@ export default function telaDespesas({ navigation }) {
       id: '1', nome: 'Alimentação', valor: 120, categoria: 'Alimentação',
       data: '2025-05-30', icone: 'fast-food-outline',
       coordenada: { latitude: -23.56, longitude: -46.64 },
-      idAmbiente: '1'
+      idAmbiente: 'Casa'
     },
     {
       id: '2', nome: 'Transporte', valor: 200, categoria: 'Transporte',
       data: '2025-05-29', icone: 'car-outline',
       coordenada: { latitude: -23.55, longitude: -46.63 },
-      idAmbiente: '2'
+      idAmbiente: 'Trabalho'
     },
     {
       id: '3', nome: 'Saúde', valor: 150, categoria: 'Saúde',
       data: '2025-05-28', icone: 'medkit-outline',
       coordenada: { latitude: -23.561, longitude: -46.641 },
-      idAmbiente: '1'
+      idAmbiente: 'Casa'
     },
     {
       id: '4', nome: 'Educação', valor: 300, categoria: 'Educação',
       data: '2025-05-27', icone: 'school-outline',
       coordenada: { latitude: -23.54, longitude: -46.62 },
-      idAmbiente: '3'
+      idAmbiente: 'Escritório'
     },
     {
       id: '5', nome: 'Instrumentos', valor: 1500, categoria: 'Equipamentos',
       data: '2025-05-25', icone: 'musical-notes-outline',
       coordenada: { latitude: -23.53, longitude: -46.61 },
-      idAmbiente: '4'
+      idAmbiente: 'Estúdio'
     }
   ]);
 
@@ -57,9 +57,11 @@ export default function telaDespesas({ navigation }) {
       categoria: categoria || 'Outros',
       data: new Date().toISOString().split('T')[0],
       icone: iconeDespesa || 'home-outline',
-      ambiente: ambiente || 'Casa',
+      idAmbiente: ambiente || 'Casa',  
+      coordenada: { latitude: -23.56, longitude: -46.64 }  
     }]);
   }
+
 
   const renderItem = ({ item }) => (
     <TouchableOpacity

@@ -11,7 +11,7 @@ export default function EditarMeta({ route, navigation }) {
   const [categoria, setCategoria] = useState(meta.categoria);
   const [dataLimite, setDataLimite] = useState(meta.dataLimite);
   const [status, setStatus] = useState(meta.status);
-  const [ambiente, setAmbiente] = useState(meta.ambiente);
+  const [ambiente, setAmbiente] = useState(meta.idAmbiente);
 
   const handleSalvar = () => {
     onSalvar({
@@ -22,7 +22,7 @@ export default function EditarMeta({ route, navigation }) {
       categoria,
       dataLimite,
       status,
-      ambiente
+      idAmbiente
     });
     navigation.goBack();
   };

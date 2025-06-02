@@ -10,8 +10,8 @@ export default function EditarDespesa({ route, navigation }) {
   const [valor, setValor] = useState(String(despesa.valor));
   const [categoria, setCategoria] = useState(despesa.categoria);
   const [data, setData] = useState(despesa.data);
-  const [descricao, setDescricao] = useState(despesa.descricao);
-  const [ambiente, setAmbiente] = useState(despesa.ambiente);
+  const [ambiente, setAmbiente] = useState(despesa.idAmbiente);
+
 
   const handleSalvar = () => {
     onSalvar({
@@ -21,7 +21,6 @@ export default function EditarDespesa({ route, navigation }) {
       valor: parseFloat(valor),
       categoria,
       data,
-      descricao,
       ambiente
     });
     navigation.goBack();
@@ -87,13 +86,6 @@ export default function EditarDespesa({ route, navigation }) {
       <TextInput
         value={data}
         onChangeText={setData}
-        style={styles.input}
-      />
-
-      <Text style={styles.label}>Descrição:</Text>
-      <TextInput
-        value={descricao}
-        onChangeText={setDescricao}
         style={styles.input}
       />
 
