@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     padding: 20,
   },
+  containerEditarDespesa: {
+    padding: 20,
+    backgroundColor: '#fff',
+  },
   saldoContainer: {
     marginBottom: 30,
     alignItems: 'center',
@@ -136,13 +140,13 @@ const styles = StyleSheet.create({
   opcoesContainer: { 
     flexDirection: 'row', 
     flexWrap: 'wrap', 
-    marginVertical: 8 
+    marginVertical: 12
   },
   opcao: { 
     borderWidth: 1, 
     borderColor: '#ccc', 
     borderRadius: 8, 
-    padding: 12, 
+    padding: 10, 
     margin: 6, 
     backgroundColor: '#f2f2f2'
   },
@@ -153,11 +157,25 @@ const styles = StyleSheet.create({
   button: { 
     backgroundColor: '#226473', 
     padding: 12, 
-    marginVertical: 8, 
+    marginVertical: 5, 
     borderRadius: 6 
   },
-  excluir: { backgroundColor: 'red' },
-  buttonText: { color: '#fff', textAlign: 'center' },
+  excluir: { 
+    backgroundColor: 'red', 
+    marginBottom: 60
+  },
+  buttonText: { 
+    color: '#fff', 
+    textAlign: 'center' 
+  },
+  picker: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 6,
+    marginBottom: 12,
+    padding: 1,
+    backgroundColor: '#f2f2f2'
+  },
 });
 
 
