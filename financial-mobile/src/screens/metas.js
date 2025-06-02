@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import styles from "../styles";
 import Icon from 'react-native-vector-icons/Ionicons';
+import * as Speech from 'expo-speech';
+
 
 export default function TelaMetas({ navigation }) {
   const [metas, setMetas] = useState([
@@ -10,7 +12,7 @@ export default function TelaMetas({ navigation }) {
     { id: '3', nome: 'Estudar para Concurso', valor: 2000, categoria: 'Educação', dataLimite: '2025-08-15', icone: 'school-outline', status: 'ativa', ambiente: 'Casa' },
     { id: '4', nome: 'Reforma da Casa', valor: 15000, categoria: 'Casa', dataLimite: '2025-11-01', icone: 'home-outline', status: 'ativa', ambiente: 'Casa' },
   ]);
-  
+
   const editarMeta = (metaEditada) => {
     setMetas(prevMetas =>
       prevMetas.map(meta =>
@@ -56,9 +58,17 @@ export default function TelaMetas({ navigation }) {
           <Text style={styles.itemCategoria}>{item.categoria}</Text>
           <Text style={styles.itemData}>{item.dataLimite}</Text>
         </View>
+        <TouchableOpacity onPress={() => falarMeta(item)} style={{ marginTop: 5 }}>
+          <Text style={{ color: '#226473' }}>🔊 Ouvir</Text>
+        </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );
+
+  function falarMeta(meta) {
+    const texto = `${meta.nome}, categoria: ${meta.categoria}, valor: ${meta.valor} reais, até: ${meta.dataLimite}`;
+    Speech.speak(texto);
+  }
 
   return (
     <View style={styles.container}>
