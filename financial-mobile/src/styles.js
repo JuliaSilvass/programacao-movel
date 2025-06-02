@@ -122,6 +122,42 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center' 
   },
+  label: { 
+    fontSize: 16, 
+    marginVertical: 8 
+  },
+  input: { 
+    borderWidth: 1, 
+    borderColor: '#ccc', 
+    padding: 10, 
+    borderRadius: 6, 
+    marginBottom: 12 
+  },
+  opcoesContainer: { 
+    flexDirection: 'row', 
+    flexWrap: 'wrap', 
+    marginVertical: 8 
+  },
+  opcao: { 
+    borderWidth: 1, 
+    borderColor: '#ccc', 
+    borderRadius: 8, 
+    padding: 12, 
+    margin: 6, 
+    backgroundColor: '#f2f2f2'
+  },
+  opcaoSelecionada: { 
+    backgroundColor: '#4DB6AC',  
+    borderColor: '#00796B'
+  },
+  button: { 
+    backgroundColor: '#226473', 
+    padding: 12, 
+    marginVertical: 8, 
+    borderRadius: 6 
+  },
+  excluir: { backgroundColor: 'red' },
+  buttonText: { color: '#fff', textAlign: 'center' },
 });
 
 

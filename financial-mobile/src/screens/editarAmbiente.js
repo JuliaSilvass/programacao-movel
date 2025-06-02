@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from '../styles'; 
+
+const opcoesIcones = [
+  'home-outline', 'briefcase-outline', 'musical-notes-outline', 'school-outline',
+  'fast-food-outline', 'car-outline', 'medkit-outline', 'airplane-outline',
+  'game-controller-outline', 'paw-outline'
+];
 
 export default function EditarAmbiente({ route, navigation }) {
   const { ambiente, onSalvar, onExcluir } = route.params;
@@ -35,14 +42,24 @@ export default function EditarAmbiente({ route, navigation }) {
         value={nome}
         onChangeText={setNome}
         style={styles.input}
+        placeholder="Digite o nome..."
       />
 
-      <Text style={styles.label}>Ícone:</Text>
-      <TextInput 
-        value={icone}
-        onChangeText={setIcone}
-        style={styles.input}
-      />
+      <Text style={styles.label}>Escolha o Ícone:</Text>
+      <View style={styles.opcoesContainer}>
+        {opcoesIcones.map((icon) => (
+          <TouchableOpacity 
+            key={icon}
+            style={[
+              styles.opcao, 
+              icone === icon && styles.opcaoSelecionada
+            ]}
+            onPress={() => setIcone(icon)}
+          >
+            <Icon name={icon} size={30} color={icone === icon ? '#fff' : '#226473'} />
+          </TouchableOpacity>
+        ))}
+      </View>
 
       <TouchableOpacity style={styles.button} onPress={handleSalvar}>
         <Text style={styles.buttonText}>Salvar</Text>
@@ -54,12 +71,3 @@ export default function EditarAmbiente({ route, navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
-  label: { fontSize: 16, marginVertical: 8 },
-  input: { borderWidth: 1, borderColor: '#ccc', padding: 8, borderRadius: 4 },
-  button: { backgroundColor: '#226473', padding: 12, marginVertical: 8, borderRadius: 4 },
-  excluir: { backgroundColor: 'red' },
-  buttonText: { color: '#fff', textAlign: 'center' },
-});
