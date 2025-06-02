@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     color: '#226473',
   },
   despesasContainer: {
-    marginBottom: 30,
+    marginBottom: 25,
   },
   sectionTitle: {
     fontSize: 20,
