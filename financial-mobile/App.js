@@ -48,8 +48,6 @@ function MetaStack() {
 }
 
 export default function App() {
-  const [colorIcone, setColorIcone] = useState("red");
-
   return (
     <NavigationContainer>
       <Drawer.Navigator
