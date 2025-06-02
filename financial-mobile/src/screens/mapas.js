@@ -39,9 +39,9 @@ export const despesas = [
 
 export default function TelaMapa({ navigation }) {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <MapView
-        style={{ flex: 1 }}
+        style={styles.map}
         initialRegion={{
           latitude: -23.56,
           longitude: -46.64,

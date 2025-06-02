@@ -112,7 +112,16 @@ const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 14,
     color: '#666'
-  }
+  },
+  map: {
+    flex: 1,
+    width: '100%',
+  },
+  sobre: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
 });
 
 
