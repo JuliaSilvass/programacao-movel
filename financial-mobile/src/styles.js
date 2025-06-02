@@ -103,7 +103,16 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#777',
   },
-
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 16
+  },
+  legend: {
+    marginTop: 12,
+    fontSize: 14,
+    color: '#666'
+  }
 });
 
 

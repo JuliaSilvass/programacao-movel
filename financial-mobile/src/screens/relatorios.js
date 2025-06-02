@@ -60,8 +60,8 @@ export default function TelaRelatorios({ navigation }) {
   };
 
   return (
-    <View style={[styles.container, { padding: 16 }]}>
-      <Text style={[styles.title, { fontSize: 20, fontWeight: 'bold', marginBottom: 16 }]}>
+    <View style={[styles.container]}>
+      <Text style={[styles.title]}>
         Relatório de Gastos por Ambiente
       </Text>
 
@@ -74,7 +74,7 @@ export default function TelaRelatorios({ navigation }) {
         style={{ borderRadius: 12 }}
       />
 
-      <Text style={[styles.legend, { marginTop: 12, fontSize: 14, color: '#666' }]}>
+      <Text style={[styles.legend]}>
         Valores em R$
       </Text>
 
