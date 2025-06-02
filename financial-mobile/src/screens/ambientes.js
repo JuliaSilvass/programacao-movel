@@ -44,9 +44,6 @@ export default function telaAmbiente({ navigation }) {
       <Icon name={item.icone} size={24} color="#226473" />
       <Text style={styles.itemText}>{item.nome}</Text>
 
-      {/* <TouchableOpacity onPress={() => excluirAmbiente(item.id)}>
-        <Icon name="trash-outline" size={20} color="#226473" />
-      </TouchableOpacity> */}
     </TouchableOpacity>
   );
 
@@ -60,7 +57,7 @@ export default function telaAmbiente({ navigation }) {
       />
 
       <TouchableOpacity style={styles.fab} onPress={() => addAmbiente('Novo Ambiente', 'home-outline')}>
-        <Icon name="add" size={30} color="#fff" />
+        <Icon name="add-outline" size={30} color="#fff" />
       </TouchableOpacity>
 
     </View>

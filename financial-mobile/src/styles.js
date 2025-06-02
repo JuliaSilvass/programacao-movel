@@ -8,12 +8,6 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     padding: 20,
   },
-  // title:{
-  //   fontSize: 24,
-  //   fontWeight: 'bold',
-  //   color: '#226473',
-  //   marginBottom: 20,
-  // },
   saldoContainer: {
     marginBottom: 30,
     alignItems: 'center',
@@ -87,7 +81,31 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     padding: 15,
     elevation: 5,
-  }
+  },
+  itemNome: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+
+  itemValor: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#226473',
+  },
+
+  itemCategoria: {
+    fontSize: 12,
+    color: '#777',
+  },
+
+  itemData: {
+    fontSize: 12,
+    color: '#777',
+  },
+
 });
+
+
 
 export default styles;

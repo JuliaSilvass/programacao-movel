@@ -5,13 +5,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import telaInicial from './src/screens/inicio';
-import telaDespesas from './src/screens/despesas';
+import TelaDespesas from './src/screens/despesas';
 import telaMetas from './src/screens/metas';
 import telaRelatorios from './src/screens/relatorios';
 import telaMapa from './src/screens/mapas';
 import telaSobre from './src/screens/sobre';
 import TelaAmbiente from './src/screens/ambientes';
 import EditarAmbiente from './src/screens/editarAmbiente';
+import EditarDespesa from './src/screens/editarDespesa';
 
 
 const Drawer = createDrawerNavigator();
@@ -22,6 +23,16 @@ function AmbienteStack() {
     <Stack.Navigator>
       <Stack.Screen name="TelaAmbiente" component={TelaAmbiente} options={{ title: '' }} />
       <Stack.Screen name="EditarAmbiente" component={EditarAmbiente} options={{ title: 'Editar Ambiente' }} />
+    </Stack.Navigator>
+  );
+}
+
+
+function DespesaStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="TelaDespesas" component={TelaDespesas} options={{ title: '' }} />
+      <Stack.Screen name="EditarDespesa" component={EditarDespesa} options={{ title: 'Editar Despesa' }} />
     </Stack.Navigator>
   );
 }
@@ -65,7 +76,7 @@ export default function App() {
         />
         <Drawer.Screen
           name="Despesas"
-          component={telaDespesas}
+          component={DespesaStack}
           options={{
             drawerLabel: "Despesas",
             headerShown: true,
