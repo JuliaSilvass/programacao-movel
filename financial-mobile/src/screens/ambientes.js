@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, TouchableOpacity} from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import styles from "../styles";
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -9,7 +9,7 @@ export default function telaAmbiente({ navigation }) {
     { id: '1', nome: 'Casa', icone: 'home-outline' },
     { id: '2', nome: 'Trabalho', icone: 'briefcase-outline' },
     { id: '3', nome: 'Escritório', icone: 'business-outline' },
-    { id: '4', nome: 'Estúdio', icone: 'musical-notes-outline' },
+    { id: '4', nome: 'Estúdio', icone: 'musical-notes-outline' }
   ]);
 
   const editarAmbiente = (ambienteEditado) => {
@@ -31,14 +31,14 @@ export default function telaAmbiente({ navigation }) {
       icone: iconeAmbiente,
     }])
   };
-  
+
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.itemAmbiente}
-      onPress={() => navigation.navigate('EditarAmbiente', { 
-        ambiente: item, 
-        onSalvar: editarAmbiente, 
-        onExcluir: excluirAmbiente 
+      onPress={() => navigation.navigate('EditarAmbiente', {
+        ambiente: item,
+        onSalvar: editarAmbiente,
+        onExcluir: excluirAmbiente
       })}
     >
       <Icon name={item.icone} size={24} color="#226473" />

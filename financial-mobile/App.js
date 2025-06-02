@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 function AmbienteStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TelaAmbiente" component={TelaAmbiente} options={{ title: '' }} />
+      <Stack.Screen name="TelaAmbiente" component={TelaAmbiente} options={{ title: 'Todos os Ambientes:' }} />
       <Stack.Screen name="EditarAmbiente" component={EditarAmbiente} options={{ title: 'Editar Ambiente' }} />
     </Stack.Navigator>
   );
@@ -32,7 +32,7 @@ function AmbienteStack() {
 function DespesaStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TelaDespesas" component={TelaDespesas} options={{ title: '' }} />
+      <Stack.Screen name="TelaDespesas" component={TelaDespesas} options={{ title: 'Todas as Despesas:' }} />
       <Stack.Screen name="EditarDespesa" component={EditarDespesa} options={{ title: 'Editar Despesa' }} />
     </Stack.Navigator>
   );
@@ -41,7 +41,7 @@ function DespesaStack() {
 function MetaStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TelaMetas" component={TelaMetas} options={{ title: '' }} />
+      <Stack.Screen name="TelaMetas" component={TelaMetas} options={{ title: 'Todas as Metas:' }} />
       <Stack.Screen name="EditarMeta" component={EditarMeta} options={{ title: 'Editar Meta' }} />
     </Stack.Navigator>
   );
