@@ -18,7 +18,7 @@ const metaEmDestaque = metas.reduce((prev, current) =>
 );
 
 export default function Inicial() {
-  // Coloque o useState aqui dentro, dentro da função do componente!
+  // Coloque o useState aqui dentro, densttro da função do componente!
   const [despesas, setDespesas] = useState([
     {
       id: '1', nome: 'Alimentação', valor: 120, categoria: 'Alimentação',
@@ -61,13 +61,13 @@ export default function Inicial() {
       </View>
 
       {/* Últimas Despesas */}
-      <View style={styles.despesasContainer}>
+      <View style={styles.inicioContainer}>
         <Text style={styles.sectionTitle}>Últimas Despesas</Text>
         <FlatList
           data={despesas}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <View style={styles.despesaItem}>
+            <View style={styles.inicioItem}>
               <View>
                 <Text style={styles.itemNome}>{item.nome}</Text>
                 <Text style={styles.itemCategoria}>{item.categoria}</Text>
@@ -79,13 +79,13 @@ export default function Inicial() {
       </View>
 
       {/* Metas */}
-      <View style={styles.despesasContainer}>
+      <View style={styles.inicioContainer}>
         <Text style={styles.sectionTitle}>Minhas Metas</Text>
         <FlatList
           data={metas}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <View style={styles.despesaItem}>
+            <View style={styles.inicioItem}>
               <Text style={styles.itemNome}>{item.nome}</Text>
               <Text style={styles.itemValor}>R$ {item.valor.toFixed(2)}</Text>
             </View>

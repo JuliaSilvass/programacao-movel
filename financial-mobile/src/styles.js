@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#226473',
   },
-  despesasContainer: {
+  inicioContainer: {
     marginBottom: 25,
   },
   sectionTitle: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#333',
   },
-  despesaItem: {
+  inicioItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 8,
