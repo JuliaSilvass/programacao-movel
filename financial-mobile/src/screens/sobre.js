@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text } from "react-native";
 import styles from "../styles";
 
 export default function telaSobre({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text>Tela da Sobre</Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Financial Mobile</Text>
+      <Text>Versão: 1.0.0</Text>
+      <Text>Desenvolvido por: Julia</Text>
+      <Text>Este app ajuda a gerenciar suas finanças!</Text>
     </View>
   );
 }
-
