@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function EditarDespesa({ route, navigation }) {
-  const { despesa, onSalvar, onExcluir } = route.params;
+export default function EditarMeta({ route, navigation }) {
+  const { meta, onSalvar, onExcluir } = route.params;
 
-  const [nome, setNome] = useState(despesa.nome);
-  const [icone, setIcone] = useState(despesa.icone);
-  const [valor, setValor] = useState(String(despesa.valor));
-  const [categoria, setCategoria] = useState(despesa.categoria);
-  const [data, setData] = useState(despesa.data);
-  const [descricao, setDescricao] = useState(despesa.descricao);
-  const [ambiente, setAmbiente] = useState(despesa.ambiente);
+  const [nome, setNome] = useState(meta.nome);
+  const [icone, setIcone] = useState(meta.icone);
+  const [valor, setValor] = useState(String(meta.valor));
+  const [categoria, setCategoria] = useState(meta.categoria);
+  const [dataLimite, setDataLimite] = useState(meta.dataLimite);
+  const [status, setStatus] = useState(meta.status);
+  const [ambiente, setAmbiente] = useState(meta.ambiente);
 
   const handleSalvar = () => {
     onSalvar({
-      ...despesa,
+      ...meta,
       nome,
       icone,
       valor: parseFloat(valor),
       categoria,
-      data,
-      descricao,
+      dataLimite,
+      status,
       ambiente
     });
     navigation.goBack();
@@ -29,7 +29,7 @@ export default function EditarDespesa({ route, navigation }) {
 
   const handleExcluir = () => {
     Alert.alert(
-      'Excluir Despesa',
+      'Excluir Meta',
       'Tem certeza que deseja excluir?',
       [
         { text: 'Cancelar', style: 'cancel' },
@@ -37,7 +37,7 @@ export default function EditarDespesa({ route, navigation }) {
           text: 'Excluir',
           style: 'destructive',
           onPress: () => {
-            onExcluir(despesa.id);
+            onExcluir(meta.id);
             navigation.goBack();
           }
         }
@@ -47,7 +47,7 @@ export default function EditarDespesa({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Nome da despesa:</Text>
+      <Text style={styles.label}>Nome da meta:</Text>
       <TextInput
         value={nome}
         onChangeText={setNome}
@@ -83,17 +83,17 @@ export default function EditarDespesa({ route, navigation }) {
         style={styles.input}
       />
 
-      <Text style={styles.label}>Data:</Text>
+      <Text style={styles.label}>Data limite:</Text>
       <TextInput
-        value={data}
-        onChangeText={setData}
+        value={dataLimite}
+        onChangeText={setDataLimite}
         style={styles.input}
       />
 
-      <Text style={styles.label}>Descrição:</Text>
+      <Text style={styles.label}>Status:</Text>
       <TextInput
-        value={descricao}
-        onChangeText={setDescricao}
+        value={status}
+        onChangeText={setStatus}
         style={styles.input}
       />
 
